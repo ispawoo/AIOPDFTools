@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocTools - PDF and Document Tools</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #6c757d;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --white-color: #ffffff;
+            --border-radius: 8px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Tools Section */
+        .tools-section {
+            padding: 80px 0;
+            background-color: var(--white-color);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .tool-card {
+            background-color: var(--white-color);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-file-alt"></i>
+                <h1>DocTools</h1>
+            </div>
+            <nav>
+                <a href="#tools" class="btn">Tools</a>
+                <a href="#features" class="btn">Features</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h2>Your Complete PDF Solution</h2>
+                    <p>Convert, edit, compress, and manage your PDFs with our powerful online tools.</p>
+                    <div class="file-upload">
+                        <input type="file" id="file-upload" accept=".pdf" style="display: none;">
+                        <label for="file-upload" class="btn" style="background-color: var(--primary-color); color: white;">
+                            <i class="fas fa-cloud-upload-alt"></i> Upload PDF
+                        </label>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://via.placeholder.com/500x350" alt="PDF tools illustration" style="max-width: 100%;">
+                </div>
+            </div>
+        </section>
+
+        <section id="tools" class="tools-section">
+            <div class="container">
+                <h2 style="text-align: center;">Our PDF Tools</h2>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div style="width: 70px; height: 70px; background-color: rgba(74, 107, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                            <i class="fas fa-file-pdf" style="font-size: 30px; color: var(--primary-color);"></i>
+                        </div>
+                        <h3>Merge PDF</h3>
+                        <p>Combine multiple PDF files into one document</p>
+                        <button class="btn" style="background-color: var(--primary-color); color: white;">Use Tool</button>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div style="width: 70px; height: 70px; background-color: rgba(74, 107, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                            <i class="fas fa-cut" style="font-size: 30px; color: var(--primary-color);"></i>
+                        </div>
+                        <h3>Split PDF</h3>
+                        <p>Divide a PDF into multiple documents</p>
+                        <button class="btn" style="background-color: var(--primary-color); color: white;">Use Tool</button>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div style="width: 70px; height: 70px; background-color: rgba(74, 107, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                            <i class="fas fa-compress-alt" style="font-size: 30px; color: var(--primary-color);"></i>
+                        </div>
+                        <h3>Compress PDF</h3>
+                        <p>Reduce PDF file size while maintaining quality</p>
+                        <button class="btn" style="background-color: var(--primary-color); color: white;">Use Tool</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" style="padding: 80px 0; background-color: var(--light-color);">
+            <div class="container">
+                <h2 style="text-align: center;">Key Features</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;">
+                    <div style="background: white; padding: 30px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center;">
+                        <i class="fas fa-lock" style="font-size: 40px; color: var(--primary-color); margin-bottom: 20px;"></i>
+                        <h3>Secure Processing</h3>
+                        <p>Your files are protected and automatically deleted after processing</p>
+                    </div>
+                    <div style="background: white; padding: 30px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center;">
+                        <i class="fas fa-bolt" style="font-size: 40px; color: var(--primary-color); margin-bottom: 20px;"></i>
+                        <h3>Fast Conversion</h3>
+                        <p>Quick processing without compromising quality</p>
+                    </div>
+                    <div style="background: white; padding: 30px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center;">
+                        <i class="fas fa-cloud" style="font-size: 40px; color: var(--primary-color); margin-bottom: 20px;"></i>
+                        <h3>Cloud-Based</h3>
+                        <p>No software installation required</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background-color: var(--dark-color); color: white; padding: 40px 0;">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
+                <div style="flex: 1; min-width: 250px;">
+                    <h3>DocTools</h3>
+                    <p>Your complete PDF solution for all document needs.</p>
+                </div>
+                <div style="flex: 1; min-width: 250px;">
+                    <h4>Quick Links</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 10px;"><a href="#tools" style="color: white;">Tools</a></li>
+                        <li style="margin-bottom: 10px;"><a href="#features" style="color: white;">Features</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p>&copy; 2023 DocTools. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // File upload handling
+        document.getElementById('file-upload').addEventListener('change', function(e) {
+            const files = e.target.files;
+            if (files.length > 0) {
+                alert(`Uploaded ${files.length} file(s). In a real app, this would process the files.`);
+                // Here you would typically send the files to your backend for processing
+            }
+        });
+
+        // Tool buttons functionality
+        document.querySelectorAll('.tool-card button').forEach(button => {
+            button.addEventListener('click', function() {
+                const toolName = this.parentElement.querySelector('h3').textContent;
+                alert(`You selected: ${toolName}. This would open the specific tool interface.`);
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
